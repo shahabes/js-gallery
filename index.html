@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <img src="https://picsum.photos/200/300/?random&t=1" alt="" class="original">
+    <div class="images">
+        <img src="https://picsum.photos/200/300/?random&t=1" alt="">
+        <img src="https://picsum.photos/200/300/?random&t=2" alt="">
+        <img src="https://picsum.photos/200/300/?random&t=3" alt="">
+        <img src="https://picsum.photos/200/300/?random&t=4" alt="">
+        <img src="https://picsum.photos/200/300/?random&t=5" alt="">
+        <img src="https://picsum.photos/200/300/?random&t=6" alt="">
+        <img src="https://picsum.photos/200/300/?random&t=7" alt="">
+        <img src="https://picsum.photos/200/300/?random&t=8" alt="">
+        <img src="https://picsum.photos/200/300/?random&t=9" alt="">
+        <img src="https://picsum.photos/200/300/?random&t=10" alt="">
+    </div>
+
+    <script>
+        let imgParent = document.querySelector(".images");
+        let images = imgParent.querySelectorAll("img");
+        let mainImage = document.querySelector(".original");
+        images.forEach(element => {
+            element.addEventListener("click",function(event){
+                let clickedSource = event.target.getAttribute("src");
+                mainImage.setAttribute("src", clickedSource);
+            });
+        });
+    </script>
+</body>
+</html>
